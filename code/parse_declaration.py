@@ -16,11 +16,17 @@ def get_meta(df, bp):
 
 
 def _remove_null_cols(df):
+    '''drop columns with no info, 
+    while preserving the sequence'''
     mask = pd.DataFrame(df.columns.tolist()).notnull().any(1)
     return df[df.columns[mask]]
 
 
 def prepare_content(df, bp1):
+    '''split decloration records into two dfs,
+    - deputy
+    - relatives
+    '''
     bp2 = df[(df.iloc[:, 0] == 'Близкий родственник')].index[0]  # split between deputy and his relatives
     
     mask = df.iloc[:, 0].str.contains('должность указана на')
@@ -41,6 +47,7 @@ def prepare_content(df, bp1):
 
 
 def get_indices(df):
+    '''split records into real estate and other'''
     first_level = pd.Series(df.columns.get_level_values(0))
     res_index = first_level[first_level == "Недвижимое имущество"].index[0]
     other_index = first_level[first_level == 'Движимое имущество'].index[0] 
@@ -49,6 +56,7 @@ def get_indices(df):
 
 
 def _merge_colnames(df):
+    '''merge column names of diff levels'''
     cols1 = pd.Series(df.columns.get_level_values(1))
     cols2 = pd.Series(df.columns.get_level_values(2))
     cols2[cols2.isnull()] = cols1[cols2.isnull()]
@@ -64,7 +72,7 @@ def parse_real_estate(df, res_index:int, other_index:int):
 
 
 def parse_other_estate(df, other_index:int):
-    '''get real estate'''
+    '''get other estate'''
     
     odf = df.iloc[:, other_index:].dropna(axis=0, how='all')
     odf.columns = _merge_colnames(odf)
@@ -74,7 +82,8 @@ def parse_other_estate(df, other_index:int):
 
 
 def get_values(df, key):
-    if key in df.columns.get_level_values(0):
+    'get all instances under the key column'
+    if key in df.columns.get_level_values(0):  # TODO: understand, why/where we don't have this key
         k = idx[key, :]
         r = df.loc[:, k].iloc[:,0]
         return r[r.notnull()].tolist()
@@ -88,7 +97,7 @@ def parse_content(df):
 
     cdf.sort_index(axis=1, inplace=True)
     result = {"income": get_values(cdf, 'Доходы'),
-              "spendeturs": get_values(cdf, 'Расходы')}
+              "spending": get_values(cdf, 'Расходы')}
     
     
     ri, oi = get_indices(df)
