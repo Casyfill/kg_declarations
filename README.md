@@ -1,11 +1,11 @@
 Learn python and scrape some tax declaration
 ==============================
-mini-workshop for friends in Kazakhstan
+mini-workshop for friends in Kyrgyzstan
 
 download and parse declorations
 
 --------
-- [base_link](http://mkk.gov.kg/contents/view/id/621/pid/157)
+- [Kyrgyzstan parlament tax declarations](http://mkk.gov.kg/contents/view/id/621/pid/157)
 
 ---
 
