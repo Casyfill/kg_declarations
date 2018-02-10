@@ -32,9 +32,3 @@ test:
 ## Test with timer
 timetest:
 	python -m nose --with-timer --timer-top-n 10
-
-# copy project to SE googledrive
-archive:
-	ARCHIVAL_PATH = "/Users/$(USER)/Google Drive File Stream/My Drive/StreetEasy Research Files/02 - Research Projects/2018_$(PROJECT_DIR)"
-	cp "../$(PROJECT_DIR) $(ARCHIVAL_PATH)"
-	@echo ">>> Project was copied to:\n $(ARCHIVAL_PATH)"
