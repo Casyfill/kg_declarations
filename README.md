@@ -9,6 +9,16 @@ download and parse declorations
 
 ---
 
+## How to use (for newbies)
+
+- you can simply download whole repo as an archive ("clone or download" button on the right)
+- OR, you can:
+    - [install git](https://git-scm.com/)
+    - open terminal, go to your projects folder, and enter `git clone https://github.com/Casyfill/kg_declarations.git`. This will deploy repository locally
+    - this way, while in the folder (in terminal) you can enter `git pull` to get all latest updates from the repo (all local changes will be erased)
+
+---
+
 # Links
 
 
