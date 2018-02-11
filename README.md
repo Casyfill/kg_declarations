@@ -28,7 +28,8 @@ download and parse declorations
 ## Pandas
 - Wes McKinney - Python for Data Analysis, Data Wrangling with Pandas, NumPy, and IPython (no link)
 - [pandas cookbok](https://github.com/jvns/pandas-cookbook). Обратите внимание на бейдж **binder** - если кликнуть на него, ноубтуки запустятся на виртуальной машине, и их можно будет потестит!
-- [Инструкция по Pandas (рус)](https://habrahabr.ru/company/ods/blog/322626/)
+- [Урок по Pandas (рус)](https://habrahabr.ru/company/ods/blog/322626/), [(видео)](https://www.youtube.com/watch?v=dEFxoyJhm3Y&feature=youtu.be)
+- [Modern Pandas](https://tomaugspurger.github.io/modern-1-intro.html)
 
 ## Other
 - [Interesting Pandas Notebooks](https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks)
