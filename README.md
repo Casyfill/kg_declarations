@@ -1,5 +1,7 @@
 Learn python and scrape some tax declaration
 ==============================
+
+[![Join the chat at https://gitter.im/parsing-declarations/Lobby](https://badges.gitter.im/parsing-declarations/Lobby.svg)](https://gitter.im/parsing-declarations/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 mini-workshop for friends in Kyrgyzstan
 
 download and parse declorations
